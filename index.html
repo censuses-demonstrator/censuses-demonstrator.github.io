@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recensements lausannois</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+
+  <script src="https://kit.fontawesome.com/3a1bf36dfe.js" crossorigin="anonymous"></script> 
+
+</head>
+<body style="background-color:#ffffff;">
+
+ <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+   <!--<div class="navbar-header">
+    <a class="navbar-brand" href="#"><img src="assets/img/time_machine_eu_logo.svg" alt="TMO_logo"/></a>
+   </div>-->
+
+   <div class="nav navbar-nav navbar-left">
+    <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="query-btn"><i class="fas fa-filter white"></i>&nbsp;&nbsp;Requête</a></li>
+   </div>
+
+   <div id="navigation_controls" class="navigation_controls">
+    <button id="go_previous">Page précédente</button>
+    <input id="current_page" min="1" max="999" value="1" type="number"/>
+    <button id="go_next">Page suivante</button>
+   </div>
+   <div class="select_year">
+    <p class="navbar-text">Année</p>
+    <select id="select_year" onchange="selectYearUpdate()"></select>
+   </div>
+  </div>
+ </div>
+
+  <div class="modal fade" id="queryModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Requête</h4>
+        </div>
+        <form autocomplete="off" id="queryForm">
+          <div class="modal-body">
+           <div class="autocomplete">
+            <label for="startYearInput">De&nbsp;</label><input id="startYearInput" type="number" min="1805" max="1898" value="1805" name="startYear" placeholder="Année" class="inputNum">
+            <label for="endYearInput">&nbsp;à&nbsp;</label>
+            <input id="endYearInput" type="number" min="1805" max="1898" value="1898" name="endYear" placeholder="Année" class="inputNum">
+           </div></br>
+           <div class="autocomplete">
+            <input id="streetInput" type="text" name="street" placeholder="Rue">
+           </div></br>
+           <div class="autocomplete">
+            <input id="streetNumInput" type="number" min="1" max="999" name="streetNum" placeholder="N°" class="inputNum">
+           </div></br>
+           <div class="autocomplete">
+            <input id="ownerInput" type="text" name="owner" placeholder="Propriétaire">
+           </div></br>
+           <div class="autocomplete">
+            <input id="surnameInput" type="text" name="surname" placeholder="Prénom">
+           </div></br>
+           <div class="autocomplete">
+            <input id="lastnameInput" type="text" name="lastname" placeholder="Nom de famille">
+           </div></br>
+           <div class="autocomplete">
+            <input id="birthNameInput" type="text" name="birthName" placeholder="Nom de naissance ♀">
+           </div></br>
+           <div class="autocomplete">
+            <input id="birthYearInput" type="number" name="birthYear" placeholder="Année de naissance" min="1700" max="1898" class="inputNum">
+           </div></br>
+           <div class="autocomplete">
+            <input id="vocationInput" type="text" name="vocation" placeholder="Vocation">
+           </div></br>
+           <div class="autocomplete">
+            <input id="originInput" type="text" name="origin" placeholder="Origine">
+           </div></br>
+          </div>
+          <div class="modal-footer">
+           <input type="submit" value="Soumettre">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+ <div class="split-left">
+  <span id="queryResults"></span>&nbsp
+ </div>
+
+ <div class="split-right">
+  <div id="image_viewer">
+   <div id="slide" class="slide"></div>
+  </div>
+  <div class="preloader js-preloader flex-center">
+   <div class="dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+   </div>
+  </div>
+ </div>
+
+ <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
+ <script src="assets/js/openseadragon.min.js"></script>
+ <script src="assets/js/main.js"></script>
+</body>
+</html>
