@@ -343,7 +343,7 @@ function initRequest(requestURL) {
   return request;
 }
 
-var request_completion = initRequest('http://127.0.0.1:8080/data/completion.json');
+var request_completion = initRequest('https://raw.githubusercontent.com/censuses-demonstrator/censuses-demonstrator.github.io/master/data/completion.json');
 request_completion.onload = function() {
   var jsonObject = request_completion.response;
   autocomplete(document.getElementById("streetInput"), jsonObject['streets']);
@@ -356,7 +356,7 @@ request_completion.onload = function() {
 }
 
 var query_form = document.getElementById('queryForm');
-var request_censuses = initRequest('http://127.0.0.1:8080/data/censuses.json');
+var request_censuses = initRequest('https://raw.githubusercontent.com/censuses-demonstrator/censuses-demonstrator.github.io/master/data/censuses.json');
 var correspondances = {'nom_rue': 2, 'no_maison': 3, 'proprietaire_nom': 4, 'chef_prenom': 5, 'chef_nom': 6, 'chef_annee_naissance': 8, 'epouse_nom': 7, 'epouse_annee_naissance': 8, 'enfants_dans_la_commune_prenom': 5, 'enfants_annee_naissance': 8, 'chef_origine': 10, 'chef_vocation': 9, 'pensionnaires_prenom': 5, 'pensionnaires_nom': 6, 'pensionnaires_origine': 10, 'pensionnaires_condition': 9}
 var columns = Object.keys(correspondances);
 var results_span = document.getElementById('queryResults');
