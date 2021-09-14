@@ -155,7 +155,7 @@ var viewer = OpenSeadragon({
     id: "slide",
     tileSources: {
         type: 'image',
-        url:  'http://127.0.0.1:8080/data/jpg/1832-' + (currentPage-1).toString().padStart(3, "0") + '.jpg',
+        url:  'https://raw.githubusercontent.com/censuses-demonstrator/censuses-demonstrator.github.io/master/data/jpg/1832-' + (currentPage-1).toString().padStart(3, "0") + '.jpg',
         crossOriginPolicy: 'RPetitpierre',
         ajaxWithCredentials: false
     },
@@ -168,7 +168,7 @@ var viewer = OpenSeadragon({
 function render() {
   viewer.open({
         type: 'image',
-        url:  'http://127.0.0.1:8080/data/jpg/1832-' + (currentPage-1).toString().padStart(3, "0") + '.jpg',
+        url:  'https://raw.githubusercontent.com/censuses-demonstrator/censuses-demonstrator.github.io/master/data/jpg/1832-' + (currentPage-1).toString().padStart(3, "0") + '.jpg',
         crossOriginPolicy: 'RPetitpierre',
         ajaxWithCredentials: false
     });
